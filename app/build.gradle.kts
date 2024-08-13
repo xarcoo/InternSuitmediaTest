@@ -1,6 +1,7 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    id("kotlin-kapt")
     id("androidx.navigation.safeargs.kotlin")
 }
 
@@ -59,4 +60,5 @@ dependencies {
     implementation("com.squareup.picasso:picasso:2.8")
     implementation("com.android.volley:volley:1.2.1")
     implementation("com.google.code.gson:gson:2.10.1")
+    kapt ("androidx.room:room-compiler:2.6.1")
 }

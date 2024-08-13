@@ -10,7 +10,6 @@ import android.view.ViewGroup
 import androidx.navigation.Navigation
 import com.ubaya.suitmedia.R
 import com.ubaya.suitmedia.databinding.FragmentSecondScreenBinding
-import com.ubaya.suitmedia.viewmodel.SecondScreenViewModel
 
 class SecondScreenFragment : Fragment() {
     private lateinit var binding: FragmentSecondScreenBinding
@@ -18,8 +17,6 @@ class SecondScreenFragment : Fragment() {
     companion object {
         fun newInstance() = SecondScreenFragment()
     }
-
-    private lateinit var viewModel: SecondScreenViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

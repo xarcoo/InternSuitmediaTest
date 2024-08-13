@@ -11,7 +11,6 @@ import android.widget.Toast
 import androidx.navigation.Navigation
 import com.ubaya.suitmedia.R
 import com.ubaya.suitmedia.databinding.FragmentFirstScreenBinding
-import com.ubaya.suitmedia.viewmodel.FirstScreenViewModel
 
 class FirstScreenFragment : Fragment() {
     private lateinit var binding: FragmentFirstScreenBinding
@@ -19,8 +18,6 @@ class FirstScreenFragment : Fragment() {
     companion object {
         fun newInstance() = FirstScreenFragment()
     }
-
-    private lateinit var viewModel: FirstScreenViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
