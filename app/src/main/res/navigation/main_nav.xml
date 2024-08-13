@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav"
+    app:startDestination="@id/firstScreenFragment">
+
+    <fragment
+        android:id="@+id/firstScreenFragment"
+        android:name="com.ubaya.suitmedia.view.FirstScreenFragment"
+        android:label="fragment_first_screen"
+        tools:layout="@layout/fragment_first_screen" >
+        <action
+            android:id="@+id/actionFirst"
+            app:destination="@id/secondScreenFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/secondScreenFragment"
+        android:name="com.ubaya.suitmedia.view.SecondScreenFragment"
+        android:label="fragment_second_screen"
+        tools:layout="@layout/fragment_second_screen" >
+        <action
+            android:id="@+id/actionSecond"
+            app:destination="@id/thirdScreenFragment" />
+        <argument
+            android:name="name"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/thirdScreenFragment"
+        android:name="com.ubaya.suitmedia.view.ThirdScreenFragment"
+        android:label="fragment_third_screen"
+        tools:layout="@layout/fragment_third_screen" />
+</navigation>
