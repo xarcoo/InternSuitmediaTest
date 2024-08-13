@@ -2,14 +2,18 @@ package com.ubaya.suitmedia.view
 
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
+import android.preference.PreferenceManager
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.Navigation
 import com.ubaya.suitmedia.R
+import com.ubaya.suitmedia.databinding.FragmentSecondScreenBinding
 import com.ubaya.suitmedia.viewmodel.SecondScreenViewModel
 
 class SecondScreenFragment : Fragment() {
+    private lateinit var binding: FragmentSecondScreenBinding
 
     companion object {
         fun newInstance() = SecondScreenFragment()
@@ -21,13 +25,23 @@ class SecondScreenFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_second_screen, container, false)
+        binding = FragmentSecondScreenBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(SecondScreenViewModel::class.java)
-        // TODO: Use the ViewModel
-    }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        val sharedPreferences = PreferenceManager.getDefaultSharedPreferences(requireContext())
+        val name = sharedPreferences.getString("name", "")
+        binding.txtNameShow.text = name
 
+        var selectedName = sharedPreferences.getString("selectedName", "Selected User Name")
+        binding.txtSelectedUserName.text = selectedName
+
+        binding.btnChoose.setOnClickListener {
+            val action = SecondScreenFragmentDirections.actionSecond()
+
+            Navigation.findNavController(it).navigate(action)
+        }
+    }
 }

@@ -7,9 +7,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.ubaya.suitmedia.R
+import com.ubaya.suitmedia.databinding.FragmentThirdScreenBinding
 import com.ubaya.suitmedia.viewmodel.ThirdScreenViewModel
 
 class ThirdScreenFragment : Fragment() {
+    private lateinit var binding: FragmentThirdScreenBinding
 
     companion object {
         fun newInstance() = ThirdScreenFragment()
@@ -21,6 +23,11 @@ class ThirdScreenFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_third_screen, container, false)
+        binding = FragmentThirdScreenBinding.inflate(inflater, container, false)
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
     }
 }
