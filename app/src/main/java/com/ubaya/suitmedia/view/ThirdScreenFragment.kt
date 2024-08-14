@@ -20,7 +20,6 @@ class ThirdScreenFragment : Fragment() {
     private lateinit var viewModel: ThirdScreenViewModel
 
     private lateinit var sharedPreferences: SharedPreferences
-//    private val sharedPreferences = PreferenceManager.getDefaultSharedPreferences(requireContext())
     private lateinit var userListAdapter: UserAdapter
 
     companion object {
