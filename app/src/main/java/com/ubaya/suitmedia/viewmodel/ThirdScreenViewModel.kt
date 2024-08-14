@@ -47,13 +47,6 @@ class ThirdScreenViewModel(application: Application) : AndroidViewModel(applicat
                     )
                 }
 
-//                val sType = object : TypeToken<List<User>>() {}.type
-//                val result = Gson().fromJson<List<User>>(it, sType)
-
-//                if (result.isEmpty()) emptyLoadLD.value = true
-
-//                userLD.value = result as ArrayList<User>
-
                 loadingLD.value = false
                 if (users.isEmpty()) emptyLoadLD.value = true
 
