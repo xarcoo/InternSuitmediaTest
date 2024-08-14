@@ -34,6 +34,11 @@
                 android:layout_width="310dp"
                 android:layout_height="57dp"
                 android:layout_marginTop="32dp"
+                app:boxBackgroundMode="filled"
+                app:boxCornerRadiusBottomEnd="12dp"
+                app:boxCornerRadiusBottomStart="12dp"
+                app:boxCornerRadiusTopEnd="12dp"
+                app:boxCornerRadiusTopStart="12dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/avatar">
@@ -51,6 +56,11 @@
                 android:layout_width="310dp"
                 android:layout_height="57dp"
                 android:layout_marginTop="16dp"
+                app:boxBackgroundMode="filled"
+                app:boxCornerRadiusBottomEnd="12dp"
+                app:boxCornerRadiusBottomStart="12dp"
+                app:boxCornerRadiusTopEnd="12dp"
+                app:boxCornerRadiusTopStart="12dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textInputLayoutName">
@@ -69,6 +79,7 @@
                 android:layout_marginTop="32dp"
                 android:width="310dp"
                 android:text="CHECK"
+                app:cornerRadius="12dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/TextInputLayoutPalindrome" />
@@ -80,6 +91,7 @@
                 android:layout_marginTop="16dp"
                 android:width="310dp"
                 android:text="NEXT"
+                app:cornerRadius="12dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/btnCheck" />
