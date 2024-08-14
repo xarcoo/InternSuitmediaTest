@@ -2,6 +2,7 @@ package com.ubaya.suitmedia.view
 
 import android.content.SharedPreferences
 import android.preference.PreferenceManager
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -14,7 +15,7 @@ import com.squareup.picasso.Picasso
 import com.ubaya.suitmedia.databinding.UserItemBinding
 import com.ubaya.suitmedia.model.User
 
-class UserAdapter(val userList:ArrayList<User>): RecyclerView.Adapter<UserAdapter.UserViewHolder>() {
+class UserAdapter(val userList:ArrayList<User>, val sp: SharedPreferences): RecyclerView.Adapter<UserAdapter.UserViewHolder>() {
     class UserViewHolder(var binding:UserItemBinding):RecyclerView.ViewHolder(binding.root)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UserViewHolder {
@@ -34,7 +35,7 @@ class UserAdapter(val userList:ArrayList<User>): RecyclerView.Adapter<UserAdapte
         holder.binding.txtLname.text = userList[position].lname
 
         holder.binding.card.setOnClickListener {
-//            sp.edit().putString("selectedName", userList[position].fname + " " + userList[position].lname).apply()
+            sp.edit().putString("selectedName", userList[position].fname + " " + userList[position].lname).apply()
         }
     }
 

@@ -12,14 +12,16 @@ import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.ubaya.suitmedia.R
 import com.ubaya.suitmedia.databinding.FragmentThirdScreenBinding
+import com.ubaya.suitmedia.model.User
 import com.ubaya.suitmedia.viewmodel.ThirdScreenViewModel
 
 class ThirdScreenFragment : Fragment() {
     private lateinit var binding: FragmentThirdScreenBinding
     private lateinit var viewModel: ThirdScreenViewModel
 
+    private lateinit var sharedPreferences: SharedPreferences
 //    private val sharedPreferences = PreferenceManager.getDefaultSharedPreferences(requireContext())
-    private val userListAdapter = UserAdapter(arrayListOf())
+    private lateinit var userListAdapter: UserAdapter
 
     companion object {
         fun newInstance() = ThirdScreenFragment()
@@ -35,6 +37,9 @@ class ThirdScreenFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        sharedPreferences = PreferenceManager.getDefaultSharedPreferences(requireContext())
+        userListAdapter = UserAdapter(arrayListOf<User>(), sharedPreferences)
 
         viewModel = ViewModelProvider(this).get(ThirdScreenViewModel::class.java)
         viewModel.refresh()
